@@ -1,0 +1,26 @@
+﻿@model IEnumerable<RealTimeBlogPosts.Models.Post>
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    foreach (var post in Model)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                @post.Title
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <img src="@post.ImageUrl" class="card-img-top" alt="image" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">@post.SubTitle</h5>
+                        <p class="card-text">@post.Body</p>
+                        <p class="card-text"><small class="text-muted">Author: @post.Author</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
