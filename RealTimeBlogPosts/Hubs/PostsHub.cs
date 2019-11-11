@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNet.SignalR;
+﻿using Data.Models;
+using Microsoft.AspNet.SignalR;
 using Microsoft.AspNetCore.SignalR;
-using RealTimeBlogPosts.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -8,13 +8,19 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RealTimeBlogPosts.Models;
 using Microsoft.EntityFrameworkCore;
-using RealTimeBlogPosts.Repository;
-using RealTimeBlogPosts.BusinessLogic;
 using RealTimeBlogPosts.Hubs;
 using Microsoft.OpenApi.Models;
-
+using Services.Helpers;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using Data.Models;
+using Services;
+using Data;
+using Microsoft.AspNetCore.Http;
+using Pioneer.Pagination;
+using Swashbuckle.Swagger;
 
 namespace RealTimeBlogPosts
 {
@@ -31,16 +37,45 @@ namespace RealTimeBlogPosts
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<BlogContext>(opts => opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            services.AddScoped<IDataRepository<Post>, PostManager>();
+            services.AddScoped<IDataRepository<Post>, PostService>();
+            //services.AddScoped<IDataRepository<User>, UserService>();
+            services.AddScoped<UserService>();
             services.AddScoped<PostsHub>();
+            services.AddCors();
             services.AddSignalR();
+            services.AddSession();
+            services.AddTransient<IPaginatedMetaService, PaginatedMetaService>();
             services.AddControllersWithViews();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RealTime Blog", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "RealTime Blog", Version = "v1"});
             });
             services.AddSwaggerDocument();
-    }
+            // configure strongly typed settings objects
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            // configure jwt authentication
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+        }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -60,6 +95,19 @@ namespace RealTimeBlogPosts
 
             app.UseRouting();
 
+            app.UseSession();
+            //Add JWToken to all incoming HTTP Request Header
+            app.Use(async (context, next) =>
+            {
+                var JWToken = context.Session.GetString("JWToken");
+                if (!string.IsNullOrEmpty(JWToken))
+                {
+                    context.Request.Headers.Add("Authorization", "Bearer " + JWToken);
+                }
+                await next();
+            });
+            //Add JWToken Authentication service
+            app.UseAuthentication();
             app.UseAuthorization();
             //app.UseSwagger();
             app.UseOpenApi();

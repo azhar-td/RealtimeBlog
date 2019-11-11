@@ -2,52 +2,54 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Data;
+using Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using RealTimeBlogPosts.Hubs;
-using RealTimeBlogPosts.Models;
-using RealTimeBlogPosts.Repository;
 
 namespace RealTimeBlogPosts.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BlogController : Controller
     {
-        private readonly IDataRepository<Post> _postRepository;
-        private IHubContext<PostsHub> HubContext
-        { get; set; }
+        private readonly IDataRepository<Post> _postService;
+        private IHubContext<PostsHub> HubContext{ get; set; }
         public BlogController(IDataRepository<Post> postRepository, IHubContext<PostsHub> hubcontext)
         {
-            _postRepository = postRepository;
+            _postService = postRepository;
             HubContext= hubcontext;
         }
         // GET: api/Blog
         [HttpGet]
-        public JsonResult Get()
+        public IActionResult Get()
         {
-            IEnumerable<Post> posts = _postRepository.GetAll();
+            IEnumerable<Post> posts = _postService.GetAll();
             return Json(posts);
         }
         // GET: api/Blog/1
         [HttpGet("{id}", Name = "Get")]
-        public JsonResult Get(int id)
+        public IActionResult Get(int id)
         {
-            Post post = _postRepository.Get(id);
+            Post post = _postService.Get(id);
 
             if (post == null)
             {
-                return Json("The post record couldn't be found.");
+                return StatusCode(404);
             }
 
             return Json(post);
         }
-        [HttpGet("{page}",Name = "GetPagedData")]
+        [AllowAnonymous]
+        [HttpGet]
         [Route("GetPagedData/{page}")]
         public JsonResult GetPageData(int page = 1)
         {
-            return Json(_postRepository.GetPageData(2, page));
+            return Json(_postService.GetPageData(3, page));
         }
         // POST: api/Blog
         [HttpPost]
@@ -55,10 +57,10 @@ namespace RealTimeBlogPosts.Controllers
         {
             if (post == null)
             {
-                return Json("Post is null.");
+                return StatusCode(400);//Validation failed
             }
 
-            _postRepository.Add(post);
+            _postService.Add(post);
             await HubContext.Clients.All.SendAsync("NewPostCreated", post);
             return Json(post);
         }
@@ -68,29 +70,29 @@ namespace RealTimeBlogPosts.Controllers
         {
             if (post == null)
             {
-                return BadRequest("Post is null.");
+                return StatusCode(400);//Validation failed
             }
 
-            Post postToUpdate = _postRepository.Get(id);
+            Post postToUpdate = _postService.Get(id);
             if (postToUpdate == null)
             {
-                return NotFound("The Post record couldn't be found.");
+                return StatusCode(404);
             }
 
-            _postRepository.Update(postToUpdate, post);
+            _postService.Update(postToUpdate, post);
             return NoContent();
         }
         // DELETE: api/Post/1
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            Post post = _postRepository.Get(id);
+            Post post = _postService.Get(id);
             if (post == null)
             {
-                return NotFound("The Post record couldn't be found.");
+                return StatusCode(404);
             }
 
-            _postRepository.Delete(post);
+            _postService.Delete(post);
             return NoContent();
         }
     }

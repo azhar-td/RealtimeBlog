@@ -1,0 +1,11 @@
+D:\RealTimeBlogPosts\Services\bin\Debug\netcoreapp3.0\Services.deps.json
+D:\RealTimeBlogPosts\Services\bin\Debug\netcoreapp3.0\Services.dll
+D:\RealTimeBlogPosts\Services\bin\Debug\netcoreapp3.0\Services.pdb
+D:\RealTimeBlogPosts\Services\bin\Debug\netcoreapp3.0\Data.dll
+D:\RealTimeBlogPosts\Services\bin\Debug\netcoreapp3.0\Data.pdb
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.csprojAssemblyReference.cache
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.AssemblyInfoInputs.cache
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.AssemblyInfo.cs
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.csproj.CopyComplete
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.dll
+D:\RealTimeBlogPosts\Services\obj\Debug\netcoreapp3.0\Services.pdb

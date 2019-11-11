@@ -1,9 +1,6 @@
-﻿@model IEnumerable<RealTimeBlogPosts.Models.Post>
-@*
-    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model RealTimeBlogPosts.DTO.DTOPost
 @{
-    foreach (var post in Model)
+    foreach (var post in Model.Posts)
     {
         <div class="card mb-3">
             <div class="card-header">
@@ -11,7 +8,7 @@
             </div>
             <div class="row no-gutters">
                 <div class="col-md-4">
-                    <img src="@post.ImageUrl" class="card-img-top" alt="image" />
+                    <img src="@post.ImageUrl" height="200" width="300" class="card-img-top" alt="image" />
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -24,3 +21,13 @@
         </div>
     }
 }
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        @{
+            for (int i = 0; i < Model.PageCount; i++)
+            {
+                <li class="@(Model.Pages[i].IsCurrent?"active":"") page-item"><a class="page-link" href="~/Home/Index/@(i+1)">@(i+1)</a></li>
+            }
+        }
+    </ul>
+</nav>

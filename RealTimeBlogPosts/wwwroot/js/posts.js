@@ -3,8 +3,6 @@
 var connection = new signalR.HubConnectionBuilder().withUrl("/postsHub").build();
 
 connection.on("NewPostCreated", function (post) {
-    console.log('Reached');
-    console.log(post);
     signalRConnection(1);
     $.toaster({ priority: 'success', title: 'New Post', message: '<strong>Title:</strong>' +post.title+' and <strong>Author:</strong>'+post.author });
 });
@@ -15,7 +13,14 @@ connection.start().then(function () {
 });
 
 $(document).ready(function () {
-    signalRConnection();
+    var url = window.location.href;
+    var page = url.substring(url.lastIndexOf('/') + 1);
+    if (page != null && page != undefined && page != "") {
+        signalRConnection(page);
+    }
+    else {
+        signalRConnection(1);//Default page-1
+    }
 });
 
 

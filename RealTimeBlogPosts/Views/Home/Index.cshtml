@@ -1,15 +1,11 @@
-﻿@model IEnumerable<RealTimeBlogPosts.Models.Post>
+﻿@model RealTimeBlogPosts.DTO.DTOPost
+@using Pioneer.Pagination;
 @{
     ViewData["Title"] = "Home Page";
 }
-@*<div class="alert alert-success">
-    <strong>New post.</strong>
-    New post has been added
-</div>*@
 <div id="postListsDiv">
-    @Html.Partial("_postsList.cshtml", Model)
+    @Html.PartialAsync("~/Views/Home/_postsList.cshtml", Model)
 </div>
-
 @section scripts{
     <script src="~/js/signalr/dist/browser/signalr.js"></script>
     <script src="~/js/posts.js"></script>

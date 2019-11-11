@@ -1,0 +1,8 @@
+D:\RealTimeBlogPosts\Data\bin\Debug\netcoreapp3.0\Data.deps.json
+D:\RealTimeBlogPosts\Data\bin\Debug\netcoreapp3.0\Data.dll
+D:\RealTimeBlogPosts\Data\bin\Debug\netcoreapp3.0\Data.pdb
+D:\RealTimeBlogPosts\Data\obj\Debug\netcoreapp3.0\Data.csprojAssemblyReference.cache
+D:\RealTimeBlogPosts\Data\obj\Debug\netcoreapp3.0\Data.AssemblyInfoInputs.cache
+D:\RealTimeBlogPosts\Data\obj\Debug\netcoreapp3.0\Data.AssemblyInfo.cs
+D:\RealTimeBlogPosts\Data\obj\Debug\netcoreapp3.0\Data.dll
+D:\RealTimeBlogPosts\Data\obj\Debug\netcoreapp3.0\Data.pdb

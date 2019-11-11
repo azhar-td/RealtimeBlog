@@ -12,6 +12,8 @@ D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\RealTimeBlogPosts
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\RealTimeBlogPosts.Views.pdb
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.AspNet.SignalR.Core.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Net.Http.Formatting.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Web.Http.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.JsonPatch.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -29,6 +31,11 @@ D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.EntityF
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.Extensions.DependencyModel.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.Identity.Client.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Logging.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.IdentityModel.Tokens.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.OpenApi.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
@@ -48,15 +55,18 @@ D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\NSwag.Core.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\NSwag.Generation.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\NSwag.Generation.AspNetCore.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\NuGet.Frameworks.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Pioneer.Pagination.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Swashbuckle.Core.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Composition.AttributedModel.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Composition.Convention.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Composition.Hosting.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Composition.Runtime.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Composition.TypedParts.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Configuration.ConfigurationManager.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.IdentityModel.Tokens.Jwt.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Runtime.Caching.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\System.Security.Cryptography.ProtectedData.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\cs\Microsoft.CodeAnalysis.resources.dll
@@ -119,6 +129,11 @@ D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\runtimes\win-x86\
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Data.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Services.dll
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Data.pdb
+D:\RealTimeBlogPosts\RealTimeBlogPosts\bin\Debug\netcoreapp3.0\Services.pdb
+D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.csprojAssemblyReference.cache
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\staticwebassets\RealTimeBlogPosts.StaticWebAssets.Manifest.cache
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\staticwebassets\RealTimeBlogPosts.StaticWebAssets.xml
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.MvcApplicationPartsAssemblyInfo.cs
@@ -144,4 +159,3 @@ D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.csproj.CopyComplete
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.dll
 D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.pdb
-D:\RealTimeBlogPosts\RealTimeBlogPosts\obj\Debug\netcoreapp3.0\RealTimeBlogPosts.csprojAssemblyReference.cache
